@@ -16,15 +16,19 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-if [[ $1 == "kde" ]]
+udiskie &
+
+if [[ $1 == "e17" ]]
 then
-  exec startkde
+  exec enlightenment_start
 elif [[ $1 == "dwm" ]]
 then
   xsetroot -cursor_name left_ptr &
   xrdb ~/.Xresources &
   xset +fp /usr/share/fonts/artwiz-latin1-fonts &
+#  xset +fp /usr/share/fonts/local &
   eval $(cat ~/.fehbg)
+#  redshift -l 40.009333:-83.010871 -t 5700:4500 -m vidmode &
   
   conky | while read -r; do xsetroot -name "$REPLY"; done &
   exec dwm
