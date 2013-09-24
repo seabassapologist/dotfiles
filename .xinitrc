@@ -16,22 +16,24 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-udiskie &
+udiskie & 
+xmodmap ~/.Xmodmap &
 
-if [[ $1 == "e17" ]]
+if [[ $1 == "alopex" ]]
 then
-  exec enlightenment_start
-elif [[ $1 == "dwm" ]]
+  xrdb ~/.Xresources 
+  xset +fp /usr/share/fonts/artwiz-latin1-fonts 
+  sh ~/.fehbg 
+  exec /usr/bin/alopex 'conky -c ~/.conkyrc_alopex'
+elif [[ $1 == "bspwm" ]]
 then
   xsetroot -cursor_name left_ptr &
-  xrdb ~/.Xresources &
-  xset +fp /usr/share/fonts/artwiz-latin1-fonts &
-#  xset +fp /usr/share/fonts/local &
-  eval $(cat ~/.fehbg)
-#  redshift -l 40.009333:-83.010871 -t 5700:4500 -m vidmode &
+  xrdb ~/.Xresources 
+  sh ~/.fehbg
   
-  conky | while read -r; do xsetroot -name "$REPLY"; done &
-  exec dwm
-else
-  echo "Choose a WM/DE:\nkde\ndwm"
+#  conky | while read -r; do xsetroot -name "$REPLY"; done &
+  [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+  mkfifo "$PANEL_FIFO"
+  sxhkd &
+  exec bspwm -s "$PANEL_FIFO" -p W
 fi
