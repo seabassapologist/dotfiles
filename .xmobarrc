@@ -1,0 +1,10 @@
+Config { font = "xft:source code pro:pixelsize=13"
+       , position = Static { xpos = 0 , ypos = 0, width = 1600, height = 19 }
+       , bgColor = "#080808"
+       , commands = [ Run StdinReader 
+                    , Run Com "clock" ["-s", "-f"] "%a %H:%M" 10
+                    , Run Com "conky" ["-q", "-i", "1"] "conky" 10 
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader%}%clock%{%conky% "
