@@ -3,8 +3,7 @@ out_to_x no
 update_interval 2.0
 
 TEXT
-${execi 10000 echo -e "\x05"}mem${execi 10000 echo -e "\x01"}${mem}\
-${execi 10000 echo -e "\x07"}net${execi 10000 echo -e "\x01"}${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%\
-${execi 10000 echo -e "\x06"}bat${execi 10000 echo -e "\x01"}${battery BAT1}\
-${execi 10000 echo -e "\x08"}vol${execi 10000 echo -e "\x01"}${exec ~/amixer}%\
-${execi 10000 echo -e "\x09"}cal${execi 10000 echo -e "\x01"}${time %a %b %d %I:%M%P}
+<fc=\#8A2F58>mem</fc> <fc=\#DDDDDD>${mem}</fc> \
+<fc=\#5E468C>net</fc> <fc=\#DDDDDD>${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%</fc> \
+<fc=\#395573>bat</fc> <fc=\#DDDDDD>${battery BAT1}</fc> \
+<fc=\#287373>vol</fc> <fc=\#DDDDDD>${exec ~/amixer}%</fc>
