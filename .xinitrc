@@ -18,20 +18,16 @@ fi
 
 udiskie & 
 xmodmap ~/.Xmodmap &
+xrandr --dpi 106.11
+xrdb ~/.Xresources
+sh ~/.fehbg
+xsetroot -cursor_name left_ptr
+dunst &
 
 if [[ $1 == "alopex" ]]
 then
-  xrdb ~/.Xresources 
-  xset +fp /usr/share/fonts/artwiz-latin1-fonts 
-  sh ~/.fehbg 
   exec /usr/bin/alopex 'conky -c ~/.conkyrc_alopex'
-elif [[ $1 == "bspwm" ]]
-then
-  xsetroot -cursor_name left_ptr &
-  xrdb ~/.Xresources 
-  sh ~/.fehbg
-  
-#  conky | while read -r; do xsetroot -name "$REPLY"; done &
+else 
   [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
   mkfifo "$PANEL_FIFO"
   sxhkd &

@@ -20,15 +20,12 @@ white=%{$'\e[1;37m'%}
 normal=%{$'\e[0m'%}
 
 #Prompt
-PROMPT="${blue}%~${normal} ${green}> "
+PROMPT="${purple}%~${normal} ${blue}>${normal} "
 
 #Aliases
 alias ls='ls --color=auto'
-alias gnex='jmtpfs ~/nexus'
-alias ugnex='sudo umount ~/nexus'
-alias backup-gnex='rsync -rP ~/nexus/ ~/nexus-backup'
-alias mplayer="mplayer -vo vappi"
-alias doctorwho="cd ~/Videos/'Doctor Who'/"
 alias mkdwm="makepkg -if --skipinteg"
-
-cd ~
+alias sxiv="sxiv -t %f *>/dev/null 2>&1 &"
+alias ...="../.."
+alias ....="../../.."
+alias off="poweroff"
