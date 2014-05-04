@@ -13,10 +13,10 @@ compinit
 
 purple=%{$'\e[0;35m'%}
 blue=%{$'\e[0;34m'%}
-green=%{$'\e[0;32m'%}
-yellow=%{$'\e[1;33m'%}
-red=%{$'\e[0;31m'%}
-white=%{$'\e[1;37m'%}
+#green=%{$'\e[0;32m'%}
+#yellow=%{$'\e[1;33m'%}
+#red=%{$'\e[0;31m'%}
+#white=%{$'\e[1;37m'%}
 normal=%{$'\e[0m'%}
 
 #Prompt

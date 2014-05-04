@@ -16,20 +16,19 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-udiskie & 
+#udiskie & 
 xmodmap ~/.Xmodmap &
-xrandr --dpi 106.11
+#xrandr --dpi 106.11
 xrdb ~/.Xresources
-sh ~/.fehbg
-xsetroot -cursor_name left_ptr
-dunst &
 
-if [[ $1 == "alopex" ]]
+if [[ $1 == "kde" ]]
 then
-  exec /usr/bin/alopex 'conky -c ~/.conkyrc_alopex'
-else 
-  [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-  mkfifo "$PANEL_FIFO"
-  sxhkd &
-  exec bspwm -s "$PANEL_FIFO" -p W
+  exec startkde
+else
+  sh ~/.fehbg
+  xsetroot -cursor_name left_ptr
+  compton --backend glx --vsync opengl-swc --paint-on-overlay &
+
+  conky | while read -r; do xsetroot -name "$REPLY"; done &
+ exec dwm
 fi

@@ -2,8 +2,9 @@ out_to_console yes
 out_to_x no
 update_interval 2.0
 
+
 TEXT
-<fc=\#8A2F58>mem</fc> <fc=\#DDDDDD>${mem}</fc> \
-<fc=\#5E468C>net</fc> <fc=\#DDDDDD>${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%</fc> \
-<fc=\#395573>bat</fc> <fc=\#DDDDDD>${battery BAT1}</fc> \
-<fc=\#287373>vol</fc> <fc=\#DDDDDD>${exec ~/amixer}%</fc>
+<span fgcolor="\#7F62B3">mem</span> <span fgcolor="\#E0E0E0">${mem}</span> \
+<span fgcolor="\#7F62B3">net</span> <span fgcolor="\#E0E0E0">${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%</span> \
+<span fgcolor="\#7F62B3">bat</span> <span fgcolor="\#E0E0E0">${battery BAT1}</span> \
+<span fgcolor="\#7F62B3">vol</span> <span fgcolor="\#E0E0E0">${exec /home/matt/Scripts/amixer.sh}%</span>
