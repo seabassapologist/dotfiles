@@ -8,24 +8,33 @@ bindkey -e
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/matt/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit promptinit
 compinit
-# End of lines added by compinstall
+promptinit
 
-PROMPT="[%/]
--> "
+setopt COMPLETE_ALIASES
 
 # Aliases
 alias ls='ls --color=auto'
-alias makedwm="makepkg -if --skipinteg"
-alias sxiv="sxiv -t %f *>/dev/null 2>&1 &"
-alias ...="../.."
-alias ....="../../.."
-alias off="poweroff"
-alias pyth="python2"
-alias am="alsamixer"
-alias rm="rm -i"
-alias starti3="startx ~/.xinitrc i3"
+alias ll='ls -l'
+alias grep='grep --color=auto'
+
+PROMPT='[%d]
+-> '
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=red'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[path]='white'
+
+precmd () { print -Pn "\e]0;$TITLE\a" }
+title() { export TITLE="$*" }
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -38,15 +47,16 @@ man() {
     man "$@"
 }
 
-#bindkey -v
-#export KEYTIMEOUT=1
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# functions
+bt_recycle() {
+	sudo systemctl restart bluetooth.service
+	echo "Restarting bluetooth.service..."
+	sleep 1
+}
 
-ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=green'
-ZSH_HIGHLIGHT_STYLES[function]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta'
+screen_recycle() {
+	swaymsg output DP-3 mode 3440x1440@120.000Hz
+	sleep 1
+	swaymsg output DP-3 mode 3440x1440@144.000Hz
+}
