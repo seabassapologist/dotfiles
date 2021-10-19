@@ -1,0 +1,10 @@
+out_to_console yes
+out_to_x no
+update_interval 2.0
+
+
+TEXT
+<span fgcolor="\#7F62B3">mem</span> <span fgcolor="\#E0E0E0">${mem}</span> \
+<span fgcolor="\#7F62B3">net</span> <span fgcolor="\#E0E0E0">${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}%</span> \
+<span fgcolor="\#7F62B3">bat</span> <span fgcolor="\#E0E0E0">${battery BAT1}</span> \
+<span fgcolor="\#7F62B3">vol</span> <span fgcolor="\#E0E0E0">${exec /home/matt/Scripts/amixer.sh}%</span>
