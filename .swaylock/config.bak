@@ -1,0 +1,23 @@
+ignore-empty-password
+fade-in=0.5
+indicator
+clock
+datestr=%a %d %b %Y
+screenshots
+color=#08080899
+font=Fira Sans Bold
+indicator-radius=250
+bs-hl-color=#47959e
+inside-color=#080808DD
+inside-clear-color=#080808DD
+inside-ver-color=#080808DD
+inside-wrong-color=#CF4F88
+key-hl-color=#7f62b3
+ring-color=#5E468C
+ring-clear-color=#4d4d4d
+ring-ver-color=#4779b3
+ring-wrong-color=#CF4F88
+text-color=#5E468C
+text-clear-color=#4d4d4d
+effect-blur=8x5
+effect-vignette=0.1:0.9

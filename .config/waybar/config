@@ -13,13 +13,13 @@
         "all-outputs": true,
         "format": "{name}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            "1:web": "",
+            "2:sys": "",
+            "3:dev": "",
+            "4:fun": "",
+            "5:ext": "",
             "urgent": "",
-            "focused": "",
+            "focused": "",
             "default": ""
         }
     },
@@ -77,7 +77,7 @@
     },
     "custom/weather": {
         "format": " {}",
-        "exec": "curl https://wttr.in/?format='%C+%c+%f'",
+        "exec": "curl https://wttr.in/Columbus+Ohio+United+States?format='%C+%c+%f'",
         "interval": 900
     },
     "custom/btbattery": {
@@ -88,10 +88,13 @@
         "interval": 500
     },
     "custom/spotifyd": {
-        "format": " {}  ",
+        "format": " {}",
         "return-type": "json",
-        "exec": "~/Code/unspdcon/bin/unspdcon",
-        "interval": 5
+        "exec": "~/Code/untitled-spotifyd-controller/bin/spdcon -o waybar",
+        "on-click": "~/Code/untitled-spotifyd-controller/bin/spdcon -c PlayPause",
+        "on-click-right": "~/Code/untitled-spotifyd-controller/bin/spdcon -c Next",
+        "on-click-middle": "~/Code/untitled-spotifyd-controller/bin/spdcon -c Previous",
+        "interval": 2
     }
 }
 

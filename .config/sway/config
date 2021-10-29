@@ -8,7 +8,7 @@ font pango:Fira Sans Bold 12
 output DP-3 {
         mode 3440x1440@144.000Hz
         position 0 0
-        bg ~/Pictures/sa1bs9dn9sq71.png center
+        bg ~/Pictures/swayback_gruvbox.png center
 }
 
 input 9610:8226:Glorious_Model_O_Wireless {
@@ -18,6 +18,7 @@ input 9610:8226:Glorious_Model_O_Wireless {
 
 # gaps and borders
 default_border normal 4
+titlebar_border_thickness 4
 gaps inner 10
 smart_gaps on
 
@@ -123,23 +124,25 @@ exec wl-paste -t text --watch clipman store
 
 exec gammastep -c ~/.config/gammastep/gammastep.conf
 
+exec udiskie
+
 # Set GTK properties properly (https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland)
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Materia-dark'
-    gsettings set $gnome-schema icon-theme 'Qogir-dark'
+    gsettings set $gnome-schema gtk-theme 'Gruvbox-Material-Dark'
+    gsettings set $gnome-schema icon-theme 'Numix'
     gsettings set $gnome-schema cursor-theme 'Qogir'
     gsettings set $gnome-schema font-name 'Noto Sans Medium 11'
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #7f62b3 #5E468C #DDDDDD #914E89   #5E468C
-client.focused_inactive #bfbfbf #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #4d4d4d #242424 #7a7a7a #292d2e   #222222
-client.urgent           #CF4F88 #CF4F88 #DDDDDD #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #a89984 #a89984 #504945 #b8bb26   #a89984
+client.focused_inactive #504945 #504945 #a89984 #98971a   #504945
+client.unfocused        #282828 #282828 #928374 #98971a   #282828
+client.urgent           #b16286 #b16286 #ebdbb2 #b8bb26   #b16286
+client.placeholder      #1d2021 #1d2021 #504945 #b8bb26   #1d2021
 
-client.background       #ffffff
+client.background       #32302f
 
 bar {
         swaybar_command waybar

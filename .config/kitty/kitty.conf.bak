@@ -6,8 +6,10 @@ bold_italic_font auto
 font_size 13
 
 # Colors
-foreground #999999
-background #080808
+foreground #dddddd
+#foreground #999999
+background #242424
+#background #080808
 
 color0 #242424
 color8 #474747
@@ -15,20 +17,37 @@ color8 #474747
 color1 #8A2F58
 color9 #CF4F88
 
-color2  #19cb00
-color10 #23fd00
+color2  #287373
+color10 #53A6A6
 
-color3  #cecb00
-color11 #fffd00
+color3  #914E89
+color11 #BF85CC
 
-color4  #0d73cc
-color12 #1a8fff
+color4  #395573
+color12 #4779B3
 
-color5  #cb1ed1
-color13 #fd28ff
+color5  #5E468C
+color13 #7F62B3
 
-color6  #0dcdcd
-color14 #14ffff
+color6  #2B7694
+color14 #47959E
 
 color7  #dddddd
 color15 #ffffff
+
+# Other settings
+url_style curly
+open_url_with default
+url_prefixes http https file ftp gemini irc gopher mailto news git
+detect_urls yes
+
+copy_on_select yes
+
+select_by_word_characters @-./_~?&=%+#
+
+enable_audio_bell no
+
+allow_remote_control yes
+
+touch_scroll_multiplier 3.0
+sync_to_monitor yes
