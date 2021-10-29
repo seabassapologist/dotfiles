@@ -19,18 +19,18 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 
-PROMPT='[%d]
--> '
+PROMPT='%d
+>> '
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[command]='fg=green'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=red'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[path]='white'
 
 precmd () { print -Pn "\e]0;$TITLE\a" }
