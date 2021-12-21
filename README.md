@@ -5,6 +5,7 @@
 * __Window Manager__ - [sway](https://github.com/swaywm/sway)
 * __Panel__ - [waybar](https://github.com/Alexays/Waybar)
 * __Terminal__ - [foot](https://codeberg.org/dnkl/foot)
+* __System Color Scheme__ - [gruvbox](https://github.com/morhetz/gruvbox)
 * __Shell__ - zsh
 * __Shell Theme__ - [typewritten](https://github.com/reobin/typewritten)
 
