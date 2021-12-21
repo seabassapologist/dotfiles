@@ -1,15 +1,14 @@
 # sway config file
 
 set $mod Mod4
-set $term foot
-set $launcher ~/.config/fuzzel/launch.sh
+set $term kitty
 
 font pango:Fira Sans Bold 12
 
 output DP-3 {
         mode 3440x1440@144.000Hz
         position 0 0
-        bg ~/Pictures/swayback_gruvbox.png center
+        bg ~/Pictures/sa1bs9dn9sq71.png center
 }
 
 input 9610:8226:Glorious_Model_O_Wireless {
@@ -19,10 +18,8 @@ input 9610:8226:Glorious_Model_O_Wireless {
 
 # gaps and borders
 default_border normal 4
-titlebar_border_thickness 4
 gaps inner 10
 smart_gaps on
-smart_borders on
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -43,9 +40,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start launcher
-# for_window [app_id="^kickoff$"] floating enable, sticky enable, border pixel 4
-# set $menu exec $term --app-id=launcher -e sway-launcher-desktop
-bindsym $mod+d exec $launcher
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 20 ppt 30 ppt, border pixel 4
+set $menu exec $term --class=launcher -e sway-launcher-desktop
+bindsym $mod+d exec $menu
 
 # change focus
 bindsym $mod+h focus left
@@ -110,21 +107,7 @@ bindsym $mod+Shift+5 move container to workspace number $ws5
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart sway inplace (preserves your layout/session, can be used to upgrade sway)W
-bindsym $mod+Shift+e exec swaynag \
-        -f 'Fira Sans Bold 12' \
-        --background 1d2021 \
-        --text d5c4a1 \
-        --border a89984 \
-        --border-bottom d65d0e \
-        --button-background 504945 \
-        --button-text d5c4a1 \
-        --button-padding 3 \
-        --button-dismiss-gap 0 \
-        --button-margin-right 2 \
-        -t warning \
-        -m 'Do you really want to exit sway?' \
-        -s "I'm sorry, Jon" \
-        -B 'Yes, exit sway' 'swaymsg exit' \
+bindsym $mod+Shift+e exec "swaynag -f 'Fira Sans Bold 12' -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'"
 
 bindsym $mod+Shift+s exec "swaylock"
 
@@ -152,13 +135,13 @@ exec_always {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #a89984 #a89984 #504945 #b8bb26   #a89984
-client.focused_inactive #504945 #504945 #a89984 #98971a   #504945
-client.unfocused        #282828 #282828 #928374 #98971a   #282828
-client.urgent           #b16286 #b16286 #ebdbb2 #b8bb26   #b16286
-client.placeholder      #1d2021 #1d2021 #504945 #b8bb26   #1d2021
+client.focused          #7f62b3 #5E468C #DDDDDD #914E89   #5E468C
+client.focused_inactive #bfbfbf #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #4d4d4d #242424 #7a7a7a #292d2e   #222222
+client.urgent           #CF4F88 #CF4F88 #DDDDDD #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #32302f
+client.background       #ffffff
 
 bar {
         swaybar_command waybar

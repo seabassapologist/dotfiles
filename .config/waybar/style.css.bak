@@ -1,0 +1,138 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Fira Sans, Font Awesome,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #242424;
+    border-bottom: 4px solid #6b6b6b;
+    color: #dddddd;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+tooltip label {
+    font-family: Fira Code, Font Awesome,sans-serif;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    background-color: #474747;
+    border-radius: 0 12px 0 0;
+}
+
+#workspaces button {
+    padding: 0px;
+    background-color: transparent;
+    color: #dddddd;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -4px #acacac;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -4px #dddddd;
+}
+
+#workspaces button.focused {
+    box-shadow: inset 0 -4px #7f62b3;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #0e4f81;
+    border-bottom: 4px solid #dddddd;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#custom-weather,
+#custom-btbattery,
+#custom-spotifyd,
+#tray {
+    padding: 0 10px;
+    padding-top: 2px;
+    margin: 0;
+    color: #dddddd;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+#custom-spotifyd {
+    background-color: #242424;
+    border-bottom: 4px solid #6b6b6b;
+}
+
+#pulseaudio {
+    background-color: #474747;
+    border-bottom: 4px solid #cf4f88;
+    border-radius: 12px 0 0 0;
+}
+
+#custom-btbattery {
+    background-color: #474747;
+    border-bottom: 4px solid #bf85cc;
+}
+
+#cpu {
+    background-color: #474747;
+    border-bottom: 4px solid #7f62b3;
+}
+
+#memory {
+    background-color: #474747;
+    border-bottom: 4px solid #4779b3;
+}
+
+#custom-weather {
+    background-color: #474747;
+    border-bottom: 4px solid #47959e;
+}
+
+#tray {
+    background-color: #474747;
+    border-bottom: 4px solid #6b6b6b;
+}
+
+@keyframes blink {
+    to {
+        background-color: #dddddd;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

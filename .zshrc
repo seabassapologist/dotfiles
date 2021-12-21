@@ -9,8 +9,8 @@ bindkey -e
 zstyle :compinstall filename '/home/matt/.zshrc'
 
 autoload -Uz compinit promptinit
-compinit
 promptinit
+compinit
 
 setopt COMPLETE_ALIASES
 
@@ -19,8 +19,22 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 
-PROMPT='%d
->> '
+#PROMPT='%F{15}%d%f
+#%F{12}>>%f '
+
+export TYPEWRITTEN_CURSOR="block"
+export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+export TYPEWRITTEN_COLOR_MAPPINGS="primary:green;info_negative:magenta"
+export TYPEWRITTEN_SYMBOL="$"
+export TYPEWRITTEN_ARROW_SYMBOL="➜"
+export TYPEWRITTEN_RIGHT_PROMPT_PREFIX="@ "
+
+fpath+=$HOME/.zsh/typewritten
+autoload -U promptinit; promptinit
+prompt typewritten
+
+export LS_COLORS="di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -29,12 +43,9 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[command]='fg=green'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=red'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[path]='white'
-
-precmd () { print -Pn "\e]0;$TITLE\a" }
-title() { export TITLE="$*" }
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
