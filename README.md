@@ -8,6 +8,7 @@
 * __System Color Scheme__ - [gruvbox](https://github.com/morhetz/gruvbox)
 * __Shell__ - zsh
 * __Shell Theme__ - [typewritten](https://github.com/reobin/typewritten)
+* __Wallpaper__ - [Arch Gruvbox Dark](https://www.reddit.com/r/wallpaper/comments/ll1gov/arch_gruvbox_wallpaper_v2_dark_light_3840x2160/)
 
 __Panel Widgets:__
   * Bluetooth Battery Level Indicator - [gobbl](https://github.com/seabassapologist/gobbl)
