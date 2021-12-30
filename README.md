@@ -1,6 +1,6 @@
 # dotfile configurations for my Arch Linux system
 
-![](/images/desktop-2021-12-21.png)
+![](https://raw.githubusercontent.com/seabassapologist/dotfiles/2a804d931c4e407929bca64b4358387fcfa659ee/images/desktop-2021-12-21.png)
 
 * __Window Manager__ - [sway](https://github.com/swaywm/sway)
 * __Panel__ - [waybar](https://github.com/Alexays/Waybar)
